@@ -12,7 +12,7 @@ namespace StringCalculatorKata
         {
             if (numbers.Length == 0) return 0;
 
-            string[] ints = numbers.Split(',');
+            string[] ints = numbers.Split(new char[] { ',', '\n' });
 
             int sum = 0;
 
