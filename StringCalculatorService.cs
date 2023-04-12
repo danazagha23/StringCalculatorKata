@@ -12,7 +12,14 @@ namespace StringCalculatorKata
         {
             if (numbers.Length == 0) return 0;
 
+
             string[] ints = numbers.Split(new char[] { ',', '\n' });
+            if (numbers.Count(c => c == ',') > 1)
+            {
+                throw new Exception("string must has 2 numbers maximum");
+            }
+
+            string[] ints = numbers.Split(',');
 
             int sum = 0;
 
