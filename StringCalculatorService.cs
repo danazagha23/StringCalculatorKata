@@ -8,26 +8,23 @@ namespace StringCalculatorKata
 {
     public class StringCalculatorService
     {
+        public char[] Delimiter { get; set; } = {',', '\n'}; 
         public int Add(string numbers)
         {
             if (numbers.Length == 0) return 0;
 
-
-            string[] ints = numbers.Split(new char[] { ',', '\n' });
-            if (numbers.Count(c => c == ',') > 1)
+            if(numbers.Substring(0, 2) == "//")
             {
-                throw new Exception("string must has 2 numbers maximum");
+                Delimiter = new char[] { numbers[2] };
+                numbers = numbers.Substring(4);
             }
-
-            string[] ints = numbers.Split(',');
+            string[] ints = numbers.Split(Delimiter);
 
             int sum = 0;
-
             foreach (string s in ints)
             {
                 sum += Convert.ToInt32(s);
             }
-
             return sum;
         }
     }
