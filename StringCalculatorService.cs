@@ -33,7 +33,7 @@ namespace StringCalculatorKata
                 {
                     negativeNums.Add(num);
                 }
-                sum += num;
+                sum += num <= 1000 ? num : 0;
             }
             if (negativeNums.Count > 0)
             {
