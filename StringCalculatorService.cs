@@ -23,6 +23,7 @@ namespace StringCalculatorKata
 
             bool existNegativeNumbers = false;
             List<int> negativeNums = new List<int>();
+
             int sum = 0;
             foreach (string s in ints)
             {
