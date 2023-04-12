@@ -18,12 +18,30 @@ namespace StringCalculatorKata
                 Delimiter = new char[] { numbers[2] };
                 numbers = numbers.Substring(4);
             }
+
             string[] ints = numbers.Split(Delimiter);
-            
+
+            bool existNegativeNumbers = false;
+            List<int> negativeNums = new List<int>();
             int sum = 0;
             foreach (string s in ints)
             {
-                sum += Convert.ToInt32(s);
+                int num = Convert.ToInt32(s);
+                existNegativeNumbers = num < 0 ? true : false;
+                if (existNegativeNumbers)
+                {
+                    negativeNums.Add(num);
+                }
+                sum += num;
+            }
+            if (negativeNums.Count > 0)
+            {
+                string exception = "negatives not allowed: ";
+                foreach (int i in negativeNums)
+                {
+                    exception = exception + i.ToString();
+                }
+                throw new Exception(exception);
             }
             return sum;
         }
