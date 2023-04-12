@@ -7,8 +7,8 @@ namespace StringCalculatorKata
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter string contains from 0 to 2 numbers: ");
-            string numbers = "//;\n4;41;7";
+            Console.WriteLine("Enter string of numbers: ");
+            string numbers = "//;\n4;1002;7";
 
             var sc = new StringCalculatorService();
 
