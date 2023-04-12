@@ -19,7 +19,7 @@ namespace StringCalculatorKata
                 numbers = numbers.Substring(4);
             }
             string[] ints = numbers.Split(Delimiter);
-            
+
             int sum = 0;
             foreach (string s in ints)
             {
